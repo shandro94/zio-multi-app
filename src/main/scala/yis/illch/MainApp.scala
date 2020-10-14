@@ -19,6 +19,8 @@ object MainApp extends App {
     "cat" -> (args => new CatApp(args))
 //    "translate"
 //    "parseVkGroups"
+//    "server_Http4s+doobie"
+//    "tg_send_messages_or_bot_some_work"
   )
 
   private def parseArgs(args: List[String]) =
