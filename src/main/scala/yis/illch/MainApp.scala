@@ -1,7 +1,7 @@
 package yis.illch
 
 import yis.illch.Exceptions.{AppNotExistException, ArgsMismatchException}
-import yis.illch.apps.{CatApp, IllchApp}
+import yis.illch.apps.{CatApp, IllchApp, TranslateApp}
 import zio._
 
 import scala.util.Try
@@ -16,8 +16,8 @@ object MainApp extends App {
     } yield ()).exitCode
 
   private val name2App: Map[String, List[String] => IllchApp] = Map(
-    "cat" -> (args => new CatApp(args))
-//    "translate"
+    "cat" -> (args => new CatApp(args)),
+    "translate" -> (args => new TranslateApp(args))
 //    "parseVkGroups"
 //    "server_Http4s+doobie"
 //    "tg_send_messages_or_bot_some_work"
